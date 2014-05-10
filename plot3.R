@@ -36,7 +36,7 @@ lines(x=xdata$date_time, y=xdata$Sub_metering_2,
 lines(x=xdata$date_time, y=xdata$Sub_metering_3,
       type="l", col="blue")
 legend("topright", legend=c(paste("sub_metering", 1:3, sep="_")),
-       col=c(1:3), lwd=1, lty=1)
+       col=c("black", "red", "blue"), lwd=1, lty=1)
 
 dev.copy(device=png, file="plot3.png", width=480,height=480)
 dev.off()
