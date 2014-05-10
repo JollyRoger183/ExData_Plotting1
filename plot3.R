@@ -29,9 +29,6 @@ xdata$Date <- as.Date(xdata$Date, format="%d/%m/%Y")
 #=================================
 # create plot number 3 - Energy sub metering
 #===========================================
-plot(x=xdata$date_time, y=xdata$Global_active_power,
-     type="l", ylab="Global Active Power (kilowatts)", xlab="")
-
 plot(x=xdata$date_time, y=xdata$Sub_metering_1,
      type="l", ylab="Energy sub metering", xlab="", las=1)
 lines(x=xdata$date_time, y=xdata$Sub_metering_2,
