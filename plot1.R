@@ -15,7 +15,7 @@ xdata <- read.table(file="household_power_consumption.txt",
                nrows=100000, header=TRUE, na.string="?", sep=";", stringsAsFactors=FALSE)
 
 # select only the rows for 1st and 2nd February 2007
-date.rows <- xdata$Date %in% c("1/2/2007", "2/2/2007")
+date_rows <- xdata$Date %in% c("1/2/2007", "2/2/2007")
 xdata <- xdata[date_rows, ]
 
 #> dim(xdata)
