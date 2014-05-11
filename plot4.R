@@ -11,8 +11,7 @@
 
 # for slower read in of only certain number of rows (100,000):
 #=============================================================
-# set plotting paramters to 2x2
-par(mfrow=c(2,2))
+
 
 xdata <- read.table(file="household_power_consumption.txt",
                nrows=100000, header=TRUE, na.string="?", sep=";", stringsAsFactors=FALSE)
@@ -27,6 +26,12 @@ xdata <- xdata[date_rows, ]
 
 xdata$date_time <- strptime(paste(xdata$Date, xdata$Time), format="%d/%m/%Y %H:%M:%S")
 xdata$Date <- as.Date(xdata$Date, format="%d/%m/%Y")
+
+# create file
+#============
+png(filename="plot4.png", width=480, height=480, bg="white")
+
+par(mfrow=c(2,2))
 
 # create plot number 1 - Global Active Power
 #===========================================
@@ -55,5 +60,4 @@ legend("topright", legend=c(paste("sub_metering", 1:3, sep="_")),
 plot(x=xdata$date_time, y=xdata$Global_reactive_power, las=1,
      type="l", ylab="Global_reactive_power", xlab="datetime")
 
-dev.copy(device=png, file="plot4.png", width=480,height=480)
 dev.off()
