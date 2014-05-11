@@ -53,7 +53,7 @@ lines(x=xdata$date_time, y=xdata$Sub_metering_2,
 lines(x=xdata$date_time, y=xdata$Sub_metering_3,
       type="l", col="blue")
 legend("topright", legend=c(paste("sub_metering", 1:3, sep="_")),
-       col=c(1:3), lwd=1, lty=1)
+       col=c("black", "red", "blue"), lwd=1, lty=1)
 
 # create plot number 4 - Global_reactive_power
 #=============================================
